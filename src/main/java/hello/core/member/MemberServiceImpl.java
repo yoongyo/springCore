@@ -1,5 +1,10 @@
 package hello.core.member;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService {
 
     // 의존관계가 인터페이스 뿐만 아니라 구현까지 모두 의존하는 문제점이 있음 (DIP 위반)
@@ -8,6 +13,7 @@ public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired  // 자동 의존관계 주입 마치 (ac.getBean(MemberRepository.class)
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
