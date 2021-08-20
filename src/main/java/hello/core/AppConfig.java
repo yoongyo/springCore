@@ -22,16 +22,19 @@ public class AppConfig {
     // 생성자 주입  => 의존관계를 마치 외부에서 주입해주는것 같다고해서 (Dependency Injection)DI, 우리말로 의존관계 주입이라고 한다.
     @Bean   // Spring Container 에 등록시킨다.
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
