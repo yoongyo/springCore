@@ -13,6 +13,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.List;
 import java.util.Map;
 
+// 동일 타입 빈 두개 이상일때
 public class AllBeanTest {
 
     @Test
